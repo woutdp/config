@@ -2,7 +2,7 @@
 call pathogen#infect()
 set nocompatible              " be iMproved, required
 filetype off                  " required
-"testing some git stuff
+
 " ***VUNDLE***{{{
 " ************
 
