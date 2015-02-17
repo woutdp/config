@@ -247,4 +247,6 @@ set guicursor+=a:blinkon0
 "PLUGINS CONFIG
 "------------------------------------------------------------
 "AIRLINE
-let g:airline_powerline_fonts = 1
+let g:airline_powerline_fonts = 1   
+
+
