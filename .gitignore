@@ -1,3 +1,4 @@
 /*
 /*/
-!/.vim/
+!/.vim/**
+!/.vim/bundle/vim-airline/*
