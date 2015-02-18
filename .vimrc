@@ -113,10 +113,6 @@ set t_vb=
 " Enable use of the mouse for all modes
 set mouse=a
 
-" Set the command window height to 2 lines, to avoid many cases of having to
-" "press <Enter> to continue"
-set cmdheight=2
-
 " Display line numbers on the left
 set number
 
@@ -243,10 +239,14 @@ au VimEnter * silent execute "!gconftool-2 --type string --set /apps/gnome-termi
 " No blinking of the cursor
 set guicursor+=a:blinkon0
 
+" Opening size
+set columns=100
+
+" Highlight the current line
+set cursorline
+
 "------------------------------------------------------------
 "PLUGINS CONFIG
 "------------------------------------------------------------
 "AIRLINE
 let g:airline_powerline_fonts = 1   
-
-
