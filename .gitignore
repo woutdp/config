@@ -1,4 +1,10 @@
-/*
-/*/
-!/.vim/**
-!/.vim/bundle/vim-airline/*
+# Ignore everything
+*
+
+# But not these files...
+!.gitignore
+!.vimrc
+!.vim
+
+# ...even if they are in subdirectories
+!.vim/**/*
