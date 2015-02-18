@@ -240,7 +240,7 @@ au VimEnter * silent execute "!gconftool-2 --type string --set /apps/gnome-termi
 set guicursor+=a:blinkon0
 
 " Opening size
-set columns=100
+set lines=29 columns=100
 
 " Highlight the current line
 set cursorline
