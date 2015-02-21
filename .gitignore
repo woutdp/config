@@ -1,5 +1,4 @@
 # Ignore everything
-*
 
 # But not these files...
 !.vim
@@ -8,3 +7,4 @@
 !.vimrc
 
 # ...even if they are in subdirectories
+*
