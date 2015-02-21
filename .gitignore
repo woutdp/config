@@ -6,7 +6,7 @@
 
 # EXCEPT
 # except for .vim
-!.vim/
+!.vim/*
 !/.gitignore
 !/.vimrc
 
