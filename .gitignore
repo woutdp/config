@@ -1,10 +1,12 @@
-# Ignore everything
+# ignore all folders
+*/  
 
-# But not these files...
-!.vim
+# ignore all files in current folder
+/*
 
-!.gitignore
-!.vimrc
+# EXCEPT
+# except for .vim
+!.vim/**/**
+!/.gitignore
+!/.vimrc
 
-# ...even if they are in subdirectories
-*
