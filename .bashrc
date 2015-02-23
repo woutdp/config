@@ -139,5 +139,27 @@ NO_COLOR="\[\e[0m\]"
 
 BRACKETS=$LIGHT_BLUE
 
-PS1="$FLASHY_GREEN\u$NO_COLOR $LIGHT_BLUE\w$NO_COLOR $(__git_ps1 "$BRACKETS($PINK%s$NO_COLOR$BRACKETS)")$RED$ $NO_COLOR"
+export PS1="$FLASHY_GREEN\u$NO_COLOR $LIGHT_BLUE\w$NO_COLOR $(__git_ps1 "$BRACKETS($PINK%s$NO_COLOR$BRACKETS)")$RED$ $NO_COLOR"
 
+
+#Easier navigation
+up(){
+    local d=""
+    limit=$1
+    for ((i=1 ; i <= limit ; i++))
+    do
+        d=$d/..
+    done
+    d=$(echo $d | sed 's/^\///')
+    if [ -z "$d" ]; then
+        d=..
+    fi
+    cd $d
+}
+
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias .....="cd ../../../.."
+
+PROMPT_COMMAND="source ~/.bashrc"
