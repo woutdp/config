@@ -145,6 +145,9 @@ alias ...="cd ../.."
 alias ....="cd ../../.."
 alias .....="cd ../../../.."
 
+#lol
+alias fuck='sudo $(history -p \!\!)'
+
 #Git integration
 export GIT_PS1_SHOWDIRTYSTATE=true
 export GIT_PS1_SHOWUNTRACKEDFILES=true
@@ -179,3 +182,4 @@ function setTitle {
 }
 
 PROMPT_COMMAND="prompt"
+
