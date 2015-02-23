@@ -160,15 +160,22 @@ function prompt {
 
     if [ -d ".git" ]; 
     then
-        export PS1="$FLASHY_GREEN\u$NO_COLOR $LIGHT_BLUE\w$NO_COLOR $(__git_ps1 "$BRACKETS{$PINK%s$NO_COLOR$BRACKETS}") $RED$ $NO_COLOR"
+        export PS1="$FLASHY_GREEN\u$NO_COLOR $LIGHT_BLUE\W$NO_COLOR $(__git_ps1 "$BRACKETS{$PINK%s$NO_COLOR$BRACKETS}") $RED$ $NO_COLOR"
     else
         #If this returns true, we can call git status
         if git status > /dev/null 2>&1; then 
-            export PS1="$FLASHY_GREEN\u$NO_COLOR $PINK\w$NO_COLOR $RED$ $NO_COLOR"
+            export PS1="$FLASHY_GREEN\u$NO_COLOR $PINK\W$NO_COLOR $RED$ $NO_COLOR"
         else
-            export PS1="$FLASHY_GREEN\u$NO_COLOR $LIGHT_BLUE\w$NO_COLOR $RED$ $NO_COLOR"
+            export PS1="$FLASHY_GREEN\u$NO_COLOR $LIGHT_BLUE\W$NO_COLOR $RED$ $NO_COLOR"
         fi
     fi
+
+    setTitle
+}
+
+function setTitle {
+    local RED="\[\e[1;31m\]"
+    echo -ne "\033]0; ${PWD}\007"
 }
 
 PROMPT_COMMAND="prompt"
