@@ -1,0 +1,18 @@
+[Desktop Entry]
+Categories=;
+Comment=Edit file in Vim
+Exec=gvim -v %f
+GenericName=Process Viewer
+Hidden=false
+Name=Vim
+Terminal=true
+Type=Application
+Version=1.0
+Encoding=UTF-8
+Icon=gvim.png
+Path=/home/wout
+StartupNotify=false
+StartupWMClass=vim
+OnlyShowIn=Unity;
+X-UnityGenerated=true
+Name[en_US]=vim
