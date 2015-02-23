@@ -1,3 +1,5 @@
+source .git_completion.sh
+
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
@@ -122,4 +124,20 @@ export PATH="/home/wout/anaconda/bin:$PATH"
 #########################
 #PS1='[\u@\h \W]\$ '  # Default
 #PS1='\[\e[1;32m\][\u@\h \W]\$\[\e[0m\] ' #green
-PS1='\[\e[1;32m\]\u\[\e[m\] \[\e[1;34m\]\w\[\e[m\] \[\e[1;31m\]\$\[\e[m\] \[\e[0;37m\]'
+  
+export GIT_PS1_SHOWDIRTYSTATE=true
+export GIT_PS1_SHOWUNTRACKEDFILES=true
+
+
+
+FLASHY_GREEN="\[\e[1;32m\]"
+LIGHT_BLUE="\[\e[1;34m\]"
+PINK="\[\e[1;33m\]"
+RED="\[\e[1;31m\]"
+DARK_RED="\[\e[1;31m\]"
+NO_COLOR="\[\e[0m\]"
+
+BRACKETS=$LIGHT_BLUE
+
+PS1="$FLASHY_GREEN\u$NO_COLOR $LIGHT_BLUE\w$NO_COLOR $(__git_ps1 "$BRACKETS($PINK%s$NO_COLOR$BRACKETS)")$RED$ $NO_COLOR"
+
