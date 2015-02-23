@@ -1,4 +1,4 @@
-source .git_completion.sh
+source ~/.git_completion.sh
 
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
@@ -125,23 +125,6 @@ export PATH="/home/wout/anaconda/bin:$PATH"
 #PS1='[\u@\h \W]\$ '  # Default
 #PS1='\[\e[1;32m\][\u@\h \W]\$\[\e[0m\] ' #green
   
-export GIT_PS1_SHOWDIRTYSTATE=true
-export GIT_PS1_SHOWUNTRACKEDFILES=true
-
-
-
-FLASHY_GREEN="\[\e[1;32m\]"
-LIGHT_BLUE="\[\e[1;34m\]"
-PINK="\[\e[1;33m\]"
-RED="\[\e[1;31m\]"
-DARK_RED="\[\e[1;31m\]"
-NO_COLOR="\[\e[0m\]"
-
-BRACKETS=$LIGHT_BLUE
-
-export PS1="$FLASHY_GREEN\u$NO_COLOR $LIGHT_BLUE\w$NO_COLOR $(__git_ps1 "$BRACKETS($PINK%s$NO_COLOR$BRACKETS)")$RED$ $NO_COLOR"
-
-
 #Easier navigation
 up(){
     local d=""
@@ -162,4 +145,30 @@ alias ...="cd ../.."
 alias ....="cd ../../.."
 alias .....="cd ../../../.."
 
-PROMPT_COMMAND="source ~/.bashrc"
+#Git integration
+export GIT_PS1_SHOWDIRTYSTATE=true
+export GIT_PS1_SHOWUNTRACKEDFILES=true
+
+function prompt {
+    local FLASHY_GREEN="\[\e[1;32m\]"
+    local LIGHT_BLUE="\[\e[1;34m\]"
+    local PINK="\[\e[1;35m\]"
+    local RED="\[\e[1;31m\]"
+    local NO_COLOR="\[\e[0m\]"
+
+    local BRACKETS=$PINK
+
+    if [ -d ".git" ]; 
+    then
+        export PS1="$FLASHY_GREEN\u$NO_COLOR $LIGHT_BLUE\w$NO_COLOR $(__git_ps1 "$BRACKETS{$PINK%s$NO_COLOR$BRACKETS}") $RED$ $NO_COLOR"
+    else
+        #If this returns true, we can call git status
+        if git status > /dev/null 2>&1; then 
+            export PS1="$FLASHY_GREEN\u$NO_COLOR $PINK\w$NO_COLOR $RED$ $NO_COLOR"
+        else
+            export PS1="$FLASHY_GREEN\u$NO_COLOR $LIGHT_BLUE\w$NO_COLOR $RED$ $NO_COLOR"
+        fi
+    fi
+}
+
+PROMPT_COMMAND="prompt"
