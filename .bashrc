@@ -161,7 +161,7 @@ function prompt {
 
     local BRACKETS=$PINK
 
-    local NAME="$FLASHY_GREEN\u$NO_COLOR "
+    local NAME="$FLASHY_GREEN\u$NO_COLOR"
     local SEPERATOR="$RED$ $NO_COLOR"
 
     if [ -d ".git" ]; 
