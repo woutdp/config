@@ -245,6 +245,24 @@ set lines=29 columns=119
 " Highlight the current line
 set cursorline
 
+if has("gui_running")
+    " C-Space seems to work under gVim on both Linux and win32
+     inoremap <C-Space> <C-n>
+ else " no gui
+     if has("unix")
+         inoremap <Nul> <C-n>
+     endif
+ endif
+
+" insert new line without insert mode
+nmap <S-Enter> O<Esc>
+nmap <CR> o<Esc>
+
+nmap <silent> <A-Up> :wincmd k<CR>
+nmap <silent> <A-Down> :wincmd j<CR>
+nmap <silent> <A-Left> :wincmd h<CR>
+nmap <silent> <A-Right> :wincmd l<CR>
+
 "------------------------------------------------------------
 "PLUGINS CONFIG
 "------------------------------------------------------------

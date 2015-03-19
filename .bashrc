@@ -148,6 +148,12 @@ alias .....="cd ../../../.."
 #lol
 alias fuck='sudo $(history -p \!\!)'
 
+alias ant='cant'
+function cant {
+"ant" -logger org.apache.tools.ant.listener.AnsiColorLogger "$@" \
+    2>&1 | perl -pe 's/(?<=\e\[)2;//g'
+  }
+
 #Git integration
 export GIT_PS1_SHOWDIRTYSTATE=true
 export GIT_PS1_SHOWUNTRACKEDFILES=true
