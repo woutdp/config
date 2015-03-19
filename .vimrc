@@ -234,10 +234,11 @@ set cmdheight=2
 au InsertEnter * silent execute "!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape ibeam"    
 au InsertLeave * silent execute "!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape block"
 au VimLeave * silent execute "!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape ibeam"
-au VimEnter * silent execute "!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape ibeam"
+au VimEnter * silent execute "!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape block"
 
 " No blinking of the cursor
 set guicursor+=a:blinkon0
+silent execute "!gconftool-2 --set /apps/gnome-terminal/profiles/Default/cursor_blink_mode --type string off"
 
 " Opening size
 set lines=29 columns=119
