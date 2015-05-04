@@ -154,6 +154,9 @@ function cant {
     2>&1 | perl -pe 's/(?<=\e\[)2;//g'
   }
 
+#Git alias
+alias gst='git status'
+
 #Git integration
 export GIT_PS1_SHOWDIRTYSTATE=true
 export GIT_PS1_SHOWUNTRACKEDFILES=true
