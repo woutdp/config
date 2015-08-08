@@ -13,6 +13,8 @@ gnome-tweak-tool
 i3
 i3blocks
 i3-gaps
+feh #for wallpapers
+gnome-settings-daemon #gtk theme
 
 nautilus-open-terminal
 gpick
