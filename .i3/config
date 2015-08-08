@@ -152,9 +152,6 @@ bar {
         #tray_output primary
 
         position top
-        #mode hide
-        #modifier ctrl
-        #
         #height 25
 
         colors {
@@ -171,6 +168,7 @@ bar {
 #EXECUTE 
 exec gnome-settings-daemon
 exec nm-applet
+exec guake
 
 #COLORS
 client.unfocused #2D2D2D #2D2D2D #ffffff #ffffff

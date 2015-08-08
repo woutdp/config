@@ -15,6 +15,7 @@ i3blocks
 i3-gaps
 feh #for wallpapers
 gnome-settings-daemon #gtk theme
+xdotool
 
 nautilus-open-terminal
 gpick
