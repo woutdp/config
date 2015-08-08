@@ -1,4 +1,5 @@
-VIM
+vim
+vim-gtk
 google-chrome
 vlc
 git
@@ -11,8 +12,10 @@ gnome-tweak-tool
 
 i3
 i3blocks
+i3-gaps
 
 nautilus-open-terminal
 gpick
 
 transmission
+
