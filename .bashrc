@@ -116,9 +116,6 @@ if ! shopt -oq posix; then
 fi
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
-# added by Anaconda 2.1.0 installer
-export PATH="/home/wout/anaconda/bin:$PATH"
-
 #########################
 #####ADDED BY WOUT#######
 #########################
@@ -145,8 +142,10 @@ alias ...="cd ../.."
 alias ....="cd ../../.."
 alias .....="cd ../../../.."
 
-#lol
 alias fuck='sudo $(history -p \!\!)'
+
+#Faster apt-get
+alias apt='sudo apt-get'
 
 alias ant='cant'
 function cant {
