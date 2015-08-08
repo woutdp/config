@@ -2,10 +2,10 @@
 <gconf>
 	<entry name="silent_bell" mtime="1439045524" type="bool" value="false"/>
 	<entry name="allow_bold" mtime="1439045523" type="bool" value="true"/>
-	<entry name="font" mtime="1439045595" type="string">
-		<stringvalue>Liberation Mono for Powerline 11</stringvalue>
+	<entry name="font" mtime="1439045649" type="string">
+		<stringvalue>Ubuntu Mono derivative Powerline 12</stringvalue>
 	</entry>
-	<entry name="use_system_font" mtime="1439044846" type="bool" value="false"/>
+	<entry name="use_system_font" mtime="1439045637" type="bool" value="false"/>
 	<entry name="default_show_menubar" mtime="1439044846" type="bool" value="false"/>
 	<entry name="cursor_shape" mtime="1439044856" type="string">
 		<stringvalue>ibeam</stringvalue>
