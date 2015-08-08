@@ -5,8 +5,8 @@
 	</entry>
 	<entry name="use_system_font" mtime="1439043683" type="bool" value="false"/>
 	<entry name="default_show_menubar" mtime="1439042255" type="bool" value="false"/>
-	<entry name="cursor_shape" mtime="1439042797" type="string">
-		<stringvalue>block</stringvalue>
+	<entry name="cursor_shape" mtime="1439044071" type="string">
+		<stringvalue>ibeam</stringvalue>
 	</entry>
 	<entry name="cursor_blink_mode" mtime="1439042275" type="string">
 		<stringvalue>off</stringvalue>
