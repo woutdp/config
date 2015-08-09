@@ -3,5 +3,5 @@
 	<entry name="color" mtime="1439042321" type="string">
 		<stringvalue>#108410841084</stringvalue>
 	</entry>
-	<entry name="transparency" mtime="1439045717" type="int" value="14"/>
+	<entry name="transparency" mtime="1439045961" type="int" value="16"/>
 </gconf>
