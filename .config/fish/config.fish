@@ -2,6 +2,7 @@ set fish_greeting ""
 
 alias gst "git status"
 alias gall "git add ."
+alias gcom "git commit -m"
 
 alias ... "cd ../.."
 alias .... "cd ../../.."
