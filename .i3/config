@@ -152,15 +152,15 @@ bar {
         #tray_output primary
 
         position top
-        #height 25
+        height 20
 
         colors {
-            background #222429
-            statusline #ffffff
+            background #2D2D2D
+            statusline #928374
 
             focused_workspace  #FEC600 #FEC600 #000000
             active_workspace   #FEC600 #FEC600 #000000
-            inactive_workspace #000000 #000000 #888888
+            inactive_workspace #2D2D2D #303030 #888888
             urgent_workspace   #4CFFFC #4CFFFC #000000
         }
 }
@@ -171,7 +171,7 @@ exec nm-applet
 exec guake
 
 #COLORS
-client.unfocused #2D2D2D #2D2D2D #ffffff #ffffff
+client.unfocused #303030 #303030 #ffffff #ffffff
 client.focused   #FEC600 #FEC600 #000000 #000000
 
 #COMMANDS
