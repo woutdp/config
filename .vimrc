@@ -160,7 +160,15 @@ nnoremap <C-L> :nohl<CR><C-L>
 set t_Co=256
 let g:molokai_original = 1
 let g:rehash256 = 1
-colorscheme molokai
+
+let g:gruvbox_contrast_dark = "soft" "hard/soft/medium
+colorscheme gruvbox
+set background=dark
+
+" This makes the comments use italic
+set t_ZH=[3m
+set t_ZR=[23m
+highlight Comment cterm=italic
 
 " Automatic reloading of .vimrc
 augroup reload_vimrc " {
@@ -168,7 +176,7 @@ augroup reload_vimrc " {
     autocmd BufWritePost $MYVIMRC source $MYVIMRC
 augroup END " }
 
-"Better copy pasting, this uses the clipboard of the computer
+" Better copy pasting, this uses the clipboard of the computer
 set clipboard=unnamedplus
 
 " Clean trailing whitespace
@@ -248,12 +256,24 @@ set cursorline
 
 if has("gui_running")
     " C-Space seems to work under gVim on both Linux and win32
-     inoremap <C-Space> <C-n>
- else " no gui
-     if has("unix")
-         inoremap <Nul> <C-n>
-     endif
- endif
+    inoremap <C-Space> <C-n>
+
+    set guioptions-=m  " no menu bar
+    set guioptions-=T  " no toolbar
+    set guioptions-=r  " no right-hand scroll bar
+    set guioptions-=R  " no right-hand scroll bar
+    set guioptions-=l  " no left-hand scroll bar
+    set guioptions-=L  " no left-hand scroll bar
+    if has('gui_win32')
+        set guifont=DejaVu_Sans_Mono_for_Powerline:h10:cANSI
+    else
+        set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 10
+    endif
+else " no gui
+    if has("unix")
+        inoremap <Nul> <C-n>
+    endif
+endif
 
 " insert new line without insert mode
 nmap <S-Enter> O<Esc>
