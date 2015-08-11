@@ -289,3 +289,9 @@ nmap <silent> <A-Right> :wincmd l<CR>
 "------------------------------------------------------------
 "AIRLINE
 let g:airline_powerline_fonts = 1   
+
+"CTRLP (FUZZY FINDER)
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+set runtimepath^=~/.vim/bundle/ctrlp.vim
+
