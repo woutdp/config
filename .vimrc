@@ -293,5 +293,6 @@ let g:airline_powerline_fonts = 1
 "CTRLP (FUZZY FINDER)
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
+let g:ctrlp_show_hidden = 1
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 
