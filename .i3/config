@@ -168,7 +168,6 @@ bar {
 #EXECUTE 
 exec gnome-settings-daemon
 exec nm-applet
-exec guake
 
 #COLORS
 client.unfocused #303030 #303030 #ffffff #ffffff
