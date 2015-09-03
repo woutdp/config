@@ -203,3 +203,5 @@ bindsym $mod+Shift+u gaps outer current plus 4
 
 #WALLPAPER
 exec --no-startup-id feh --bg-fill ~/Pictures/Wallpapers/ZVVBRAR.png
+
+exec --no-startup-id /usr/lib/gnome-settings-daemon/gnome-settings-daemon
