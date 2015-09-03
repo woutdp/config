@@ -202,6 +202,4 @@ bindsym $mod+Shift+y gaps outer current minus 4
 bindsym $mod+Shift+u gaps outer current plus 4
 
 #WALLPAPER
-exec --no-startup-id feh --bg-fill ~/Pictures/Wallpapers/Solar.png
-
-#ROFI
+exec --no-startup-id feh --bg-fill ~/Pictures/Wallpapers/ZVVBRAR.png
