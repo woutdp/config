@@ -180,6 +180,9 @@ bindsym $mod+n exec nautilus --no-desktop
 #MISCELANIOUS
 hide_edge_borders both
 
+#Switch monitors
+bindsym $mod+Shift+s exec ~/.i3/switch.py
+
 # Screen brightness controls
 bindsym XF86MonBrightnessUp exec xbacklight -inc 10 # increase screen brightness
 bindsym XF86MonBrightnessDown exec xbacklight -dec 10 # decrease screen brightness
