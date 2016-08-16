@@ -194,6 +194,6 @@ function setTitle {
 PROMPT_COMMAND="prompt"
 
 # Local customized path and environment settings, etc.
-if [ -f ~/.bash_local ]; then
-    . ~/.bash_local
+if [ -f ~/.bashrc_local ]; then
+    . ~/.bashrc_local
 fi
