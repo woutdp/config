@@ -197,3 +197,7 @@ PROMPT_COMMAND="prompt"
 if [ -f ~/.bashrc_local ]; then
     . ~/.bashrc_local
 fi
+
+# Set text editor
+export VISUAL=vim
+export EDITOR="$VISUAL"
