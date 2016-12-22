@@ -18,3 +18,5 @@ alias apt 'sudo apt-get'
 function fuck
     eval command sudo $history[1]
 end
+
+source ~/.config/fish/config_local.fish
