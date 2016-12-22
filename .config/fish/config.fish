@@ -10,5 +10,4 @@ function fuck
     eval command sudo $history[1]
 end
 
-alias go_mvne 
 source ~/.config/fish/config_local.fish
