@@ -18,11 +18,12 @@ function fish_prompt
         echo -n ' '(prompt_last_pwd)
 
         set_color -o purple;
-        echo -n ' {'(_git_branch_name)'}'
+        echo -n ' {'(_git_branch_name)
 
         if [ (_is_git_dirty) ]
-            echo -n '*'
+            echo -n ' *'
         end
+        echo -n '}'
     else
         if git status > /dev/null 2>&1  
             set_color -o purple;
