@@ -85,43 +85,36 @@ set backspace=indent,eol,start
 " " When opening a new line and no filetype-specific indenting is enabled, keep
 " " the same indent as the line you're currently on. Useful for READMEs, etc.
 set autoindent
-" 
+ 
 " " Stop certain movements from always going to the first character of a line.
 " " While this behaviour deviates from that of Vi, it does what most users
 " " coming from other editors would expect.
 " set nostartofline
-" 
-" " Display the cursor position on the last line of the screen or in the status
-" " line of a window
+
+" Display the cursor position on the last line of the screen or in the status
+" line of a window
 set ruler
-" 
-" " Always display the status line, even if only one window is displayed
+ 
+" Always display the status line, even if only one window is displayed
 set laststatus=2
-" 
-" " Instead of failing a command because of unsaved changes, instead raise a
-" " dialogue asking if you wish to save changed files.
+
+" Instead of failing a command because of unsaved changes, instead raise a
+" dialogue asking if you wish to save changed files.
 set confirm
 " 
-" " Use visual bell instead of beeping when doing something wrong
+ " Use visual bell instead of beeping when doing something wrong
 set visualbell
-" 
-" " And reset the terminal code for the visual bell. If visualbell is set, and
-" " this line is also included, vim will neither flash nor beep. If visualbell
-" " is unset, this does nothing.
-" set t_vb=
-" 
-" " Enable use of the mouse for all modes
+ 
+ 
+" Enable use of the mouse for all modes
 set mouse=a
 
 " " Display line numbers on the left
 set number
  
 " " Quickly time out on keycodes, but never time out on mappings
-" set notimeout ttimeout ttimeoutlen=200
-" 
-" " Use <F11> to toggle between 'paste' and 'nopaste'
-" set pastetoggle=<F11>
-" 
+set notimeout ttimeout ttimeoutlen=50
+
 " 
 " "------------------------------------------------------------
 " " Indentation options {{{1
@@ -146,9 +139,6 @@ set expandtab
 " "
 " " Useful mappings
 " 
-" " Map Y to act like D and C, i.e. to yank until EOL, rather than act as yy,
-" " which is the default
-" map Y y$
 " 
 " " Map <C-L> (redraw screen) to also turn off search highlighting until the
 " " next search
@@ -205,7 +195,6 @@ set nobackup
 set nowritebackup
 set noswapfile
  
- 
 " " Tell vim to remember certain things when we exit
 " " "  '10  :  marks will be remembered for up to 10 previously edited files
 " " "  "100 :  will save up to 100 lines for each register
@@ -233,7 +222,7 @@ vnoremap > >gv  " better indentation
  
 " When the page starts to scroll, keep the cursor x lines from the top and x
 " lines from the bottom
-set scrolloff=8
+set scrolloff=10
 " 
 " " Set the command window height to 2 lines, to avoid many cases of having to
 " " "press <Enter> to continue"
@@ -253,28 +242,18 @@ set scrolloff=8
 " 
 " " Highlight the current line
 set cursorline
-" 
-" if has("gui_running")
-"     " C-Space seems to work under gVim on both Linux and win32
-"     inoremap <C-Space> <C-n>
-" 
-"     set guioptions-=m  " no menu bar
-"     set guioptions-=T  " no toolbar
-"     set guioptions-=r  " no right-hand scroll bar
-"     set guioptions-=R  " no right-hand scroll bar
-"     set guioptions-=l  " no left-hand scroll bar
-"     set guioptions-=L  " no left-hand scroll bar
-"     if has('gui_win32')
-"         set guifont=DejaVu_Sans_Mono_for_Powerline:h10:cANSI
-"     else
-"         set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 10
-"     endif
-" else " no gui
-"     if has("unix")
-"         inoremap <Nul> <C-n>
-"     endif
-" endif
-" 
+
+augroup collumnLimit
+  autocmd!
+  autocmd BufEnter,WinEnter,FileType python
+        \ highlight CollumnLimit ctermbg=DarkGrey guibg=DarkGrey
+  let collumnLimit = 120 " feel free to customize
+  let pattern =
+        \ '\%<' . (collumnLimit+1) . 'v.\%>' . collumnLimit . 'v'
+  autocmd BufEnter,WinEnter,FileType python
+        \ let w:m1=matchadd('CollumnLimit', pattern, -1)
+augroup END
+
 " " insert new line without insert mode
 " nmap <S-Enter> O<Esc>
 " nmap <CR> o<Esc>
@@ -283,7 +262,7 @@ set cursorline
 " nmap <silent> <A-Down> :wincmd j<CR>
 " nmap <silent> <A-Left> :wincmd h<CR>
 " nmap <silent> <A-Right> :wincmd l<CR>
-" 
+
 " "------------------------------------------------------------
 " "PLUGINS CONFIG
 " "------------------------------------------------------------
