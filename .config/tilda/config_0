@@ -1,6 +1,6 @@
 tilda_config_version = "1.2.4"
 command = "tmux"
-font = "Hack 11"
+font = "Hack 9"
 key = "grave"
 addtab_key = "<Shift><Control>t"
 fullscreen_key = "F11"
