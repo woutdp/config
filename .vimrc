@@ -189,11 +189,12 @@ set fo-=t   " don't automatically wrap text when typing
 set history=700
 set undolevels=700
  
-" Disable stupid backup and swap files - they trigger too many events
-" for file system watchers
-set nobackup
-set nowritebackup
-set noswapfile
+" " Disable stupid backup and swap files - they trigger too many events
+" " for file system watchers
+" set nobackup
+" set nowritebackup
+" set noswapfile
+set directory^=$HOME/.vim/tmp//
  
 " " Tell vim to remember certain things when we exit
 " " "  '10  :  marks will be remembered for up to 10 previously edited files
