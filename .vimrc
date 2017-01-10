@@ -183,7 +183,7 @@ set undolevels=700
 set number relativenumber
 set tw=79   " width of document (used by gd)
 " set nowrap  " don't automatically wrap on load
-" set fo-=t   " don't automatically wrap text when typing
+set fo-=t   " don't automatically wrap text when typing
 " 
 " Useful settings
 set history=700
@@ -228,26 +228,15 @@ set scrolloff=10
 " " "press <Enter> to continue"
 " set cmdheight=2
 " 
-" au InsertEnter * silent execute "!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape ibeam"    
-" au InsertLeave * silent execute "!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape block"
-" au VimLeave * silent execute "!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape ibeam"
-" au VimEnter * silent execute "!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape block"
-" 
-" " No blinking of the cursor
-" set guicursor+=a:blinkon0
-" silent execute "!gconftool-2 --set /apps/gnome-terminal/profiles/Default/cursor_blink_mode --type string off"
-" 
-" " Opening size
-"set lines=29 columns=119
-" 
 " " Highlight the current line
 set cursorline
 
+" Highlights a character in a python file if it is out of the character limit
 augroup collumnLimit
   autocmd!
   autocmd BufEnter,WinEnter,FileType python
         \ highlight CollumnLimit ctermbg=DarkGrey guibg=DarkGrey
-  let collumnLimit = 120 " feel free to customize
+  let collumnLimit = 121 " feel free to customize
   let pattern =
         \ '\%<' . (collumnLimit+1) . 'v.\%>' . collumnLimit . 'v'
   autocmd BufEnter,WinEnter,FileType python
@@ -262,6 +251,16 @@ augroup END
 " nmap <silent> <A-Down> :wincmd j<CR>
 " nmap <silent> <A-Left> :wincmd h<CR>
 " nmap <silent> <A-Right> :wincmd l<CR>
+
+" Better folding
+nnoremap <silent> <Space> @=(foldlevel('.')?'za':"\<Space>")<CR>
+vnoremap <Space> zf
+
+" Opens files without folds, enable folds by typing 'zc'
+set nofoldenable
+
+" Removes whitespace on save 
+autocmd BufWritePre *.py :%s/\s\+$//e
 
 " "------------------------------------------------------------
 " "PLUGINS CONFIG
@@ -283,3 +282,27 @@ set runtimepath^=~/.vim/bundle/ctrlp.vim
 nmap <leader>ne :NERDTree<cr>
 let NERDTreeIgnore = ['\.pyc$']
 
+"EASY MOTION
+let g:EasyMotion_do_mapping = 0 " Disable default mappings
+
+" Jump to anywhere you want with minimal keystrokes, with just one key binding.
+" `s{char}{label}`
+nmap s <Plug>(easymotion-overwin-f)
+" or
+" `s{char}{char}{label}`
+" Need one more keystroke, but on average, it may be more comfortable.
+nmap s <Plug>(easymotion-overwin-f2)
+
+" Turn on case insensitive feature
+let g:EasyMotion_smartcase = 1
+
+" JK motions: Line motions
+map <Leader>j <Plug>(easymotion-j)
+map <Leader>k <Plug>(easymotion-k)
+
+" SIMPLY FOLD
+" Let's you preview the docstring on fold
+let g:SimpylFold_docstring_preview = 1
+
+" Don't make the docstring foldable
+let g:SimpylFold_fold_docstring = 0
