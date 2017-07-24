@@ -10,6 +10,10 @@ function fish_prompt
         end
     end
 
+	if set -q VIRTUAL_ENV
+    	echo -n -s (set_color white) "(" (basename "$VIRTUAL_ENV") ")" (set_color normal) " "
+	end
+
     set_color -o green;
     echo -n (whoami)
 

@@ -15,6 +15,19 @@ execute pathogen#infect()
 " " Set 'nocompatible' to ward off unexpected things that your distro might
 " " have made, as well as sanely reset options when re-sourcing .vimrc
 set nocompatible
+
+
+set nocompatible
+filetype off
+
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+Bundle 'gmarik/vundle'
+Bundle 'dag/vim-fish'
+
+filetype plugin indent on
+
 " 
 " " Attempt to determine the type of a file based on its name and possibly its
 " " contents. Use this to allow intelligent auto-indenting for each filetype,
@@ -168,6 +181,9 @@ augroup END " }
 " 
 " " Better copy pasting, this uses the clipboard of the computer
 set clipboard=unnamedplus
+set clipboard+=unnamed  " use the clipboards of vim and win
+set paste               " Paste from a windows or from vim
+set go+=a               " Visual selection automatically copied to the clipboard
 " 
 " " Clean trailing whitespace
 " nnoremap <C-S-a>w mz:%s/\s\+$//<cr>:let @/=''<cr>`z
