@@ -38,5 +38,6 @@ function fish_prompt
     end
 
     set_color -o red;
-    echo -n ' λ '
+    echo -e ''
+    echo 'λ '
 end

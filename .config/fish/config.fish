@@ -2,12 +2,16 @@ set fish_greeting ""
 
 alias c "clear"
 
+function fcd
+    fzf-cd-widget
+end
+
 function fuck
     eval command sudo $history[1]
 end
 
 function doco
-	docker-compose $argv
+    docker-compose $argv
 end
 
 
