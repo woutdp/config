@@ -7,6 +7,7 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'airblade/vim-gitgutter'
   Plug 'scrooloose/nerdcommenter'
   Plug 'scrooloose/nerdtree'
+  Plug 'neovimhaskell/haskell-vim'
 call plug#end()
 
 " Use space instead of \ as leader
@@ -16,7 +17,7 @@ let mapleader=" "
 highlight Normal ctermbg=black ctermfg=white
 set background=dark
 colorscheme gruvbox
-let g:gruvbox_contrast_dark = 'hard'
+let g:gruvbox_contrast_dark = 'medium'
 
 " Escape is very very far from the homerow
 inoremap jj <esc>
