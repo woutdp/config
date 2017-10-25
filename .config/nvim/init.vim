@@ -8,6 +8,7 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'scrooloose/nerdcommenter'
   Plug 'scrooloose/nerdtree'
   Plug 'neovimhaskell/haskell-vim'
+  Plug 'dag/vim-fish'
 call plug#end()
 
 " Use space instead of \ as leader
@@ -32,6 +33,10 @@ nnoremap <C-P> :bprev<CR>
 " ===============
 " Plugin settings
 " ===============
+" vim-airline
+" ---------------------
+" Use special font that includes fancy arrows and stuff
+let g:airline_powerline_fonts = 1
 
 " vim-better-whitespace
 " ---------------------

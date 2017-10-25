@@ -2,6 +2,9 @@ set fish_greeting ""
 
 alias c "clear"
 
+alias vim "/usr/bin/nvim"
+alias oldvim "/usr/bin/vim"
+
 function fcd
     fzf-cd-widget
 end
