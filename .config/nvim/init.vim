@@ -10,6 +10,7 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'neovimhaskell/haskell-vim', { 'for': 'haskell' }
   Plug 'dag/vim-fish', { 'for': 'fish' }
   Plug 'mhinz/vim-startify'
+  Plug 'raimon49/requirements.txt.vim', {'for': 'requirements'}
 call plug#end()
 
 " Use space instead of \ as leader
