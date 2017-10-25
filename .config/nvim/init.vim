@@ -6,9 +6,10 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'ntpeters/vim-better-whitespace'
   Plug 'airblade/vim-gitgutter'
   Plug 'scrooloose/nerdcommenter'
-  Plug 'scrooloose/nerdtree'
-  Plug 'neovimhaskell/haskell-vim'
-  Plug 'dag/vim-fish'
+  Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+  Plug 'neovimhaskell/haskell-vim', { 'for': 'haskell' }
+  Plug 'dag/vim-fish', { 'for': 'fish' }
+  Plug 'mhinz/vim-startify'
 call plug#end()
 
 " Use space instead of \ as leader
