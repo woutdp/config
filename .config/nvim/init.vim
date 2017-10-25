@@ -15,6 +15,9 @@ call plug#end()
 " Use space instead of \ as leader
 let mapleader=" "
 
+" Enable the mouse
+set mouse=a
+
 " Colorscheme
 highlight Normal ctermbg=black ctermfg=white
 set background=dark
