@@ -3,13 +3,13 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'bwot/init.neovim'
   Plug 'morhetz/gruvbox'
   Plug 'vim-airline/vim-airline'
+  Plug 'mhinz/vim-startify'
   Plug 'ntpeters/vim-better-whitespace'
   Plug 'airblade/vim-gitgutter'
   Plug 'scrooloose/nerdcommenter'
   Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
   Plug 'neovimhaskell/haskell-vim', { 'for': 'haskell' }
   Plug 'dag/vim-fish', { 'for': 'fish' }
-  Plug 'mhinz/vim-startify'
   Plug 'raimon49/requirements.txt.vim', {'for': 'requirements'}
 call plug#end()
 
@@ -54,6 +54,9 @@ vnoremap <leader>P "+P
 " ---------------------
 " Use special font that includes fancy arrows and stuff
 let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 1 " enable airline tabline
+let g:airline#extensions#tabline#buffer_min_count = 2 " only show tabline if more than one buffer is open
+let g:airline#extensions#tabline#tab_min_count = 2 " only show tabline if more than one tab is open
 
 " vim-better-whitespace
 " ---------------------
@@ -72,3 +75,6 @@ let g:NERDSpaceDelims = 1
 " nerdtree
 " --------
 map <leader>n :NERDTreeToggle<CR>
+
+" Show hidden files
+let NERDTreeShowHidden=1
