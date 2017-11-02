@@ -11,6 +11,8 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'neovimhaskell/haskell-vim', { 'for': 'haskell' }
   Plug 'dag/vim-fish', { 'for': 'fish' }
   Plug 'raimon49/requirements.txt.vim', {'for': 'requirements'}
+  Plug 'davidhalter/jedi-vim', {'for': 'python'}
+  Plug 'Valloric/YouCompleteMe'
 call plug#end()
 
 " Use space instead of \ as leader
@@ -18,6 +20,12 @@ let mapleader=" "
 
 " Enable the mouse
 set mouse=a
+
+" Don't show the preview window split. This pops up for jedi vim for example.
+set completeopt-=preview
+
+" Use fish shell
+set shell=/bin/fish
 
 " Colorscheme
 highlight Normal ctermbg=black ctermfg=white
@@ -47,6 +55,11 @@ nnoremap <leader>P "+P
 vnoremap <leader>p "+p
 vnoremap <leader>P "+P
 
+" Python specific
+autocmd FileType python set sw=4
+autocmd FileType python set ts=4
+autocmd FileType python set sts=4
+
 " ===============
 " Plugin settings
 " ===============
@@ -74,7 +87,7 @@ let g:NERDSpaceDelims = 1
 
 " nerdtree
 " --------
-map <leader>n :NERDTreeToggle<CR>
+map <leader>m :NERDTreeToggle<CR>
 
 " Show hidden files
 let NERDTreeShowHidden=1
