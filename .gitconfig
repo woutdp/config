@@ -1,0 +1,21 @@
+[user]
+  email = woutdp@gmail.com
+  name = Wout De Puysseleir
+[push]
+  default = simple
+[core]
+  editor = nvim
+[diff]
+  guitool = meld
+  tool = meld
+[commit]
+  verbose = true
+[mergetool]
+  path = nvim
+[color]
+  ui = auto
+[alias]
+  wip = !"git commit -nm 'WIP: This is a work in progress commit'"
+  unwip = !"git reset HEAD~1"
+  s = status
+  slog = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(auto)%d%C(reset)'
