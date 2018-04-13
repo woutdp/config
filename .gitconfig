@@ -15,7 +15,7 @@
 [color]
   ui = auto
 [alias]
-  wip = !"git commit -nm 'WIP: This is a work in progress commit'"
-  unwip = !"git reset HEAD~1"
+  wip = !"git add .; git commit -nm 'WIP: This is a work in progress commit'"
+  unwip = !"if git log -1 --pretty=%B | grep 'WIP'; then git reset HEAD~1; else echo 'No WIP commit was found'; fi"
   s = status
   slog = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(auto)%d%C(reset)'
