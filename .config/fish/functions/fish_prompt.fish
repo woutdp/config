@@ -17,7 +17,7 @@ function fish_prompt
     set_color -o green;
     echo -n (whoami)
 
-    if [ -d ".git" ] 
+    if [ -d ".git" ]
         set_color -o blue;
         echo -n ' '(prompt_last_pwd)
 
@@ -29,7 +29,7 @@ function fish_prompt
         end
         echo -n '}'
     else
-        if git status > /dev/null 2>&1  
+        if git status > /dev/null 2>&1
             set_color -o purple;
         else
             set_color -o blue;
